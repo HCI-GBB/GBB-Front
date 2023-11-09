@@ -3,6 +3,8 @@ import React from 'react';
 import Topbar from '../common/Topbar';
 import './Main.css';
 import {Link} from 'react-router-dom';
+import BottomLink from '../common/BottomLink';
+
 
 const Main = () => {
   return (
@@ -15,7 +17,8 @@ const Main = () => {
         <Link to="/nickname">
             <div className='gonickname'>바로 사용해보기</div>
         </Link>
-    </nav>
+      </nav>
+        <BottomLink />
     </div>
 
 

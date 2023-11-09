@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Faster+One&family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
+
 /*Main.css*/
 .header {
     position: absolute;
@@ -5,15 +7,15 @@
     height: 70px;
     left: 394px;
     top: 275px;
-
-    font-family: 'ABeeZee';
+    text-align: center;
+    font-family: 'Alfa slab one';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
     line-height: 150%;
-    /* or 60px */
     text-align: center;
-
+    left: 50%;
+    transform: translateX(-50%);
     color: #CE4A7E;
 }
 
@@ -23,14 +25,14 @@
     height: 50px;
     left: 394px;
     top: 356px;
-
+    left: 50%;
+    transform: translateX(-50%);
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 500;
+    text-align: center;
+    font-weight: 700;
     font-size: 45px;
     line-height: 50px;
-    /* identical to box height, or 111% */
-
     color: #000E08;
 }
 
@@ -53,5 +55,7 @@
     font-size: 25px;
     line-height: 16px;
     color: #000000;
+    left: 50%;
+    transform: translateX(-50%);
 
 }

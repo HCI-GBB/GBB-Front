@@ -1,0 +1,24 @@
+/* BottomLink.css */
+.BottomLink {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    padding: 20px;
+    text-align: right;
+  }
+  
+  .bottomlinkitem {
+    color: #8b8b8b;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight:500;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .bottomlinkitem:hover {
+    color:#CE4A7E;
+  }
+  
