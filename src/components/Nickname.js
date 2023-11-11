@@ -17,8 +17,8 @@ function Nickname() {
         return;
       }
 
-      // 백엔드와 연결예정
-      //const response = await axios.post('http://your-backend-api/check-nickname', { nickname });
+      // (백엔드와 연결예정) 닉네임 Post
+      //const response = await axios.post('http://backendapi/nicknameendpoint', { nickname });
 
       // 백엔드 연결 전 가상 랜덤 응답 데이터 (실제 백엔드와 통합할 때 주석 처리할거임)
       const response = { data: { isDuplicate: Math.random() < 0.5 } };

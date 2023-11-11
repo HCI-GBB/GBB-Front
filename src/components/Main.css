@@ -1,6 +1,7 @@
+/*Main.css*/
+/*font import*/
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Faster+One&family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
 
-/*Main.css*/
 .header {
     position: absolute;
     width: 482px;

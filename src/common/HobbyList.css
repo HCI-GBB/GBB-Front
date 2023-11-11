@@ -1,0 +1,31 @@
+/* HobbyList.css */
+.hobby-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 14px;
+  }
+  
+  .hobby-item {
+    padding:15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color:#AAAAAA ;
+  }
+  
+  .selected {
+    background-color:#CE4A7E ;
+  }
+  
+  .selecthobby {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+  }

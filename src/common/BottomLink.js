@@ -8,9 +8,9 @@ function BottomLink() {
 
   return (
     <div className="BottomLink">
-      <a href={githubLink} className="bottomlinkitem" target="_blank" rel="noopener noreferrer">
-        ABOUT US
-      </a>
+            <a href={githubLink} className="bottomlinkitem" target="_blank" rel="noopener noreferrer">
+                ABOUT US
+            </a>
     </div>
   );
 }

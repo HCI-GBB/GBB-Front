@@ -1,0 +1,121 @@
+/*Result.css*/
+#resultnickname {
+    position: absolute;
+    width: 691px;
+    height: 60px;
+    right: 250px;
+    top: 150px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 150%;
+    text-align: center;
+    color: #000000;
+}
+
+.selectmehobby{
+    position: absolute;
+    width: 500px;
+    height: 60px;
+    left: 200px;
+    top: 300px;
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 150%;
+    text-align: center;
+    color: #000000;
+}
+
+#selectme {
+    font-size: 40px;
+}
+
+.selectbrainhobby{
+    position: absolute;
+    width: 500px;
+    height: 60px;
+    left: 840px;
+    top: 300px;
+
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 150%;
+    text-align: center;
+    color: #000000;
+}
+
+#selectbrain {
+    font-size: 40px;
+}
+
+#selectgood{
+    position: absolute;
+    width: 85px;
+    height: 35px;
+    left: 330px;
+    top: 360px;
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 150%;
+    text-align: center;
+    color: #CE4A7E;
+}
+
+#selectbad {
+    position: absolute;
+    width: 85px;
+    height: 35px;
+    left: 480px;
+    top: 360px;
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 150%;
+    text-align: center;
+}
+
+.versus{
+    position: absolute;
+    width: 60px;
+    height: 75px;
+    top: 470px;
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 150%;
+    text-align: center;
+    color: #000000;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.goresultdetail{
+    position: absolute;
+    width: 271px;
+    height: 77px;
+    top: 664px;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+    background: #CE4A7E;
+    border-radius: 16px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+    border:none;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+}
