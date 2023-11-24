@@ -1,52 +1,125 @@
-//Hobby.js
-import React, { useState } from 'react';
-import Topbar from '../common/Topbar';
-import HobbyList from '../common/HobbyList';
+import React, { useState, useEffect } from 'react';
 import './Hobby.css';
-// import axios from 'axios';  
-import { useNavigate } from 'react-router-dom';
+import Topbar from '../common/Topbar';
 import BottomLink from '../common/BottomLink';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-function Hobby() {
+const Hobby = () => {
+  const [likes, setLikes] = useState([]);
+  const [hates, setHates] = useState([]);
   const navigate = useNavigate();
-  const [goodHobbies, setGoodHobbies] = useState([]);
-  const [badHobbies, setBadHobbies] = useState([]);
 
-  //다음 버튼 클릭 시 실행되는 함수(백엔드와 연결예정)
-  const handleNextClick = () => {
-    // axios.post('/api/Hobbyendpoint', { goodHobbies, badHobbies })
-    //   .then(response => {
-    //     console.log('데이터 전달 성공', response.data);
-    //      navigate(`/result?nickname=${response.data.nickname}&goodHobbies=${goodHobbies.join(',')}&badHobbies=${badHobbies.join(',')}`);
-    //   })
-    //   .catch(error => {
-    //     console.error('에러', error);
-    //   });
+  const hobbies = [
+    '책 읽기',
+    '음악감상',
+    '운동',
+    '게임',
+    'OTT 시청',
+    '춤 추기',
+    '코딩',
+    '쇼핑',
+    '사진 찍기',
+    '수다 떨기'
+  ];
 
-
-    // 백엔드 연결 전 가상의 navigate(백엔드 연결 시 삭제)
-    navigate('/result');
+  const handleHobbyClick = (hobby, selectedHobbies, setSelectedHobbies) => {
+    if (selectedHobbies.includes(hobby)) {
+      setSelectedHobbies(selectedHobbies.filter((selected) => selected !== hobby));
+    } else if (selectedHobbies.length < 2) {
+      setSelectedHobbies([...selectedHobbies, hobby]);
+    }
   };
+
+  const handleNextClick = () => {
+    // 선택한 좋아하는 취미와 싫어하는 취미를 서버로 전송
+
+    axios({
+      method: 'post',
+      url: 'http://13.125.90.6:8080/api/v1/hobby',
+      data: {
+        likes : likes,
+        hates: hates
+      }, 
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'memberId' : 2
+      }
+    })
+      .then((response) => {
+        console.log('취미 정보가 성공적으로 전송되었습니다.');
+        // navigate를 사용하여 다음 페이지로 이동
+        navigate('/result');
+      })
+      .catch((error) => {
+        if(error.response){
+          console.error('취미 정보 전송 중 요류 발생');
+        }
+      });
+    }
+
+  useEffect(() => {
+    // 좋아하는 취미 상태를 사용하여 원하는 작업 수행
+    console.log('선택된 좋아하는 취미:', likes);
+  }, [likes]);
+
+  useEffect(() => {
+    // 싫어하는 취미 상태를 사용하여 원하는 작업 수행
+    console.log('선택된 싫어하는 취미:', hates);
+  }, [hates]);
 
   return (
     <div>
       <Topbar />
-      <div className='goodhobby'>좋아하는 취미를 고르세요(최대 4개)</div>
-      <div className='goodhobbylist'>
-        <HobbyList setHobbies={setGoodHobbies} />
-      </div>
-      <div className='badhobby'>싫어하는 취미를 고르세요(최대 4개)</div>
-      <div className='badhobbylist'>
-        <HobbyList setHobbies={setBadHobbies} />
+
+      {/* 좋아하는 취미 선택 */}
+      <div className='goodhobby'>
+        <h2>좋아하는 취미를 선택하세요</h2>
+        <div className='goodhobbylist'>
+          <div className="hobby-container">
+            {hobbies && hobbies.map((hobby, index) => (
+              <div
+                key={index}
+                className={`hobby-item ${likes.includes(hobby) ? 'selected' : ''}`}
+                onClick={() => handleHobbyClick(hobby, likes, setLikes)}
+              >
+                {hobby}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className='selectgoodhobby'>
+          <p>선택된 좋아하는 취미: {likes.join(', ')}</p>
+        </div>
       </div>
 
-      <button className="buttonnext" onClick={handleNextClick}>
-        다음
-      </button>
+      {/* 싫어하는 취미 선택 */}
+      <div className='badhobby'>
+        <h2>싫어하는 취미를 선택하세요</h2>
+        <div className='badhobbylist'>
+          <div className="hobby-container">
+            {hobbies && hobbies.map((hobby, index) => (
+              <div
+                key={index}
+                className={`hobby-item ${hates.includes(hobby) ? 'selected' : ''}`}
+                onClick={() => handleHobbyClick(hobby, hates, setHates)}
+              >
+                {hobby}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className='selectbadhobby'>
+          <p>선택된 싫어하는 취미: {hates.join(', ')}</p>
+        </div>
+      </div>
+
+      {/* 다음 버튼 */}
+        <button className='buttonnext' onClick={handleNextClick}>다음</button>
 
       <BottomLink />
     </div>
   );
-}
+};
 
 export default Hobby;

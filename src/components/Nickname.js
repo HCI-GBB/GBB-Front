@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
 import Topbar from '../common/Topbar';
-//import axios from 'axios';  백엔드랑 연결할 때 주석 풀 예정
+import axios from 'axios';
 import './Nickname.css';
 import BottomLink from '../common/BottomLink';
 
@@ -18,20 +18,22 @@ function Nickname() {
       }
 
       // (백엔드와 연결예정) 닉네임 Post
-      //const response = await axios.post('http://backendapi/nicknameendpoint', { nickname });
+      const response = await axios.post('http://13.125.90.6:8080/api/v1/login', 
+      { 
+        'nickname' : nickname 
+      });
 
-      // 백엔드 연결 전 가상 랜덤 응답 데이터 (실제 백엔드와 통합할 때 주석 처리할거임)
-      const response = { data: { isDuplicate: Math.random() < 0.5 } };
+      console.log(response.data)
 
-      if (response.data.isDuplicate) {
+
+      /*if (response.data.isDuplicate) {
         alert('중복된 닉네임입니다. 새로운 닉네임을 입력해주세요.');
       } else {
         alert('사용가능한 닉네임입니다.');
-      }
+      }*/
 
     } catch (error) {
       console.error('서버 요청 오류:', error);
-      alert('서버 요청 중 오류가 발생했습니다.');
     }
   };
 
