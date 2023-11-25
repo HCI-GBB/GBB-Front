@@ -1,4 +1,3 @@
-// Nickname.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
 import Topbar from '../common/Topbar';
@@ -17,20 +16,25 @@ function Nickname() {
         return;
       }
 
-      // (백엔드와 연결예정) 닉네임 Post
+      // (백엔드와 연결) 닉네임 Post
       const response = await axios.post('http://13.125.90.6:8080/api/v1/login', 
-      { 
-        'nickname' : nickname 
-      });
+        { 
+          'nickname' : nickname 
+        }
+      );
 
-      console.log(response.data)
+      // 받아온 memberId와 nickname를 localStorage에 저장
+      window.localStorage.setItem('memberId', response.data.memberId);
+      window.localStorage.setItem('nickname', response.data.nickname);
+  
+      // 백엔드에서 반환하는 데이터 확인
+      console.log(response.data);
 
-
-      /*if (response.data.isDuplicate) {
+      if (response.data.isDuplicate) {
         alert('중복된 닉네임입니다. 새로운 닉네임을 입력해주세요.');
       } else {
         alert('사용가능한 닉네임입니다.');
-      }*/
+      }
 
     } catch (error) {
       console.error('서버 요청 오류:', error);
@@ -66,4 +70,3 @@ function Nickname() {
 }
 
 export default Nickname;
-

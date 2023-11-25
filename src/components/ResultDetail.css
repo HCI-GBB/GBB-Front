@@ -1,4 +1,19 @@
 /*ResultDetail.css*/
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Abril+Fatface&family=Alfa+Slab+One&family=Faster+One&family=Linefont:wght@100&family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
+
+.explanation{
+    position: absolute;
+    width: 951px;
+    height: 90px;
+    left: 330px;
+    top: 45px;
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+
+}
 
 #resultdetailnickname {
     position: absolute;
@@ -18,9 +33,9 @@
 
 .detailselectbrainhobby{
     position: absolute;
-    width: 244px;
+    width: 400px;
     height: 60px;
-    left: 242px;
+    left: 14%;
     top: 348px;
 
     font-family: 'ABeeZee';
@@ -36,6 +51,30 @@
     font-size: 40px;
 }
 
+#selectbrain {
+    font-size: 40px;
+}
 
+.detailfocusbrainhobby{
+    position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 59%;
+    top: 348px;
 
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 150%;
+    text-align: center;
+    color: #000000;
+}
 
+#detailfocusbrain {
+    font-size: 40px;
+}
+
+#focusbrain {
+    font-size: 40px;
+}

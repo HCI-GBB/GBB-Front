@@ -34,6 +34,8 @@ const Hobby = () => {
   const handleNextClick = () => {
     // 선택한 좋아하는 취미와 싫어하는 취미를 서버로 전송
 
+  const memberId=1;
+
     axios({
       method: 'post',
       url: 'http://13.125.90.6:8080/api/v1/hobby',
@@ -43,7 +45,7 @@ const Hobby = () => {
       }, 
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
-        'memberId' : 2
+        'memberId' : memberId
       }
     })
       .then((response) => {
