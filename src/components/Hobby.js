@@ -50,6 +50,7 @@ const Hobby = () => {
     })
       .then((response) => {
         console.log('취미 정보가 성공적으로 전송되었습니다.');
+        console.log('HTTP 응답 코드:', response.status);
         // navigate를 사용하여 다음 페이지로 이동
         navigate('/result');
       })

@@ -29,6 +29,7 @@ function Nickname() {
   
       // 백엔드에서 반환하는 데이터 확인
       console.log(response.data);
+      console.log('HTTP 응답 코드:', response.status);
 
       if (response.data.isDuplicate) {
         alert('중복된 닉네임입니다. 새로운 닉네임을 입력해주세요.');
