@@ -6,7 +6,6 @@ import BottomLink from '../common/BottomLink';
 
 const Result = () => {
   // localStorage에서 memberId와 nickname 가져오기
-  const memberId = window.localStorage.getItem('memberId');
   const nickname = window.localStorage.getItem('nickname');
 
   return (
