@@ -1,3 +1,4 @@
+//Hobby.js(취미 선택 페이지)
 import React, { useState, useEffect } from 'react';
 import './Hobby.css';
 import Topbar from '../common/Topbar';
@@ -32,10 +33,10 @@ const Hobby = () => {
   };
 
   const handleNextClick = () => {
-    // 선택한 좋아하는 취미와 싫어하는 취미를 서버로 전송
 
   const memberId=2;
   
+  //(백엔드와 연결) 선택한 취미들 post
     axios({
       method: 'post',
       url: 'http://13.125.90.6:8080/api/v1/hobby',
@@ -62,12 +63,12 @@ const Hobby = () => {
     }
 
   useEffect(() => {
-    // 좋아하는 취미 상태를 사용하여 원하는 작업 수행
+    // 좋아하는 취미 상태 나열
     console.log('선택된 좋아하는 취미:', likes);
   }, [likes]);
 
   useEffect(() => {
-    // 싫어하는 취미 상태를 사용하여 원하는 작업 수행
+    // 싫어하는 취미 상태 나열
     console.log('선택된 싫어하는 취미:', hates);
   }, [hates]);
 

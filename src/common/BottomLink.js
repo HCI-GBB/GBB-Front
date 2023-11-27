@@ -1,4 +1,4 @@
-// BottomLink.js
+// BottomLink.js(ABOUT US 깃허브 연동 컴포넌트)
 import React from 'react';
 import './BottomLink.css';
 

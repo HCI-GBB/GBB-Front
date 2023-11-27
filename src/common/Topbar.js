@@ -1,4 +1,4 @@
-// Topbar.js
+// Topbar.js(GOOD OR BAD GBB IN BRAIN 상단 로코 컴포넌트)
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Topbar.css';

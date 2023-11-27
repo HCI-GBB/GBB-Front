@@ -1,3 +1,4 @@
+//Result.js(취미측정중 페이지)
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Topbar from '../common/Topbar';
@@ -12,7 +13,6 @@ const Result = () => {
     <div>
       <Topbar />
 
-      {/* 사용자의 닉네임을 표시 */}
       <p id="resultnickname">{nickname} 님의 취미를 측정 중입니다.</p>
       
       <img 

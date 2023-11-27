@@ -1,4 +1,4 @@
-//Main.js
+//Main.js(메인화면 페이지)
 import React from 'react';
 import Topbar from '../common/Topbar';
 import './Main.css';
