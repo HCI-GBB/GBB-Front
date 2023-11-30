@@ -1,3 +1,4 @@
+//Nickname.js(닉네임 페이지)
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
 import Topbar from '../common/Topbar';
@@ -38,8 +39,13 @@ function Nickname() {
       }
 
     } catch (error) {
-      console.error('서버 요청 오류:', error);
+      if (error.response && error.response.status === 409) {
+        console.error('중복된 닉네임 에러:', error.response.data);
+        alert('이미 사용 중인 닉네임입니다. 새로운 닉네임을 입력해주세요.');
+      } else {
+        console.error('서버 요청 오류:', error);
     }
+  }
   };
 
   return (
