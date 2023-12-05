@@ -1,6 +1,6 @@
 //Result.js(취미측정중 페이지)
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Topbar from '../common/Topbar';
 import './Result.css';
 import BottomLink from '../common/BottomLink';
@@ -8,6 +8,14 @@ import BottomLink from '../common/BottomLink';
 const Result = () => {
   // localStorage에서 memberId와 nickname 가져오기
   const nickname = window.localStorage.getItem('nickname');
+  const navigate = useNavigate();
+
+  //다음페이지 넘어가기
+  const navigateToResultDetail = () => {
+    navigate('/resultdetail');
+  };
+  //1분 후에 다음페이지로 넘어가도록
+  setTimeout(navigateToResultDetail, 60000);
 
   return (
     <div>
@@ -28,11 +36,7 @@ const Result = () => {
         }}
       />
      
-      <Link to="/resultdetail">
-        <button className="goresultdetail">
-          다음
-        </button>
-      </Link>
+
 
       <BottomLink />
     </div>
